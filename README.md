@@ -1,18 +1,18 @@
-bitcoind-rpc-axe.js
+axed-rpc.js
 ===============
 
-[![NPM Package](https://img.shields.io/npm/v/@axerunners/bitcoind-rpc-axe.svg?style=flat-square)](https://www.npmjs.org/package/bitcoind-rpc-axe)
-[![Build Status](https://img.shields.io/travis/AXErunners/bitcoind-rpc-axe.svg?branch=master&style=flat-square)](https://travis-ci.org/AXErunners/bitcoind-rpc-axe)
-[![Coverage Status](https://img.shields.io/coveralls/AXErunners/bitcoind-rpc-axe.svg?style=flat-square)](https://coveralls.io/r/AXErunners/bitcoind-rpc-axe?branch=master)
+[![NPM Package](https://img.shields.io/npm/v/@axerunners/axed-rpc.svg?style=flat-square)](https://www.npmjs.org/package/axed-rpc)
+[![Build Status](https://img.shields.io/travis/AXErunners/axed-rpc.svg?branch=master&style=flat-square)](https://travis-ci.org/AXErunners/axed-rpc)
+[![Coverage Status](https://img.shields.io/coveralls/AXErunners/axed-rpc.svg?style=flat-square)](https://coveralls.io/r/AXErunners/axed-rpc?branch=master)
 
 A client library to connect to AXE Core RPC in JavaScript.
 
 ## Get Started
 
-bitcoind-rpc-axe.js runs on [node](http://nodejs.org/), and can be installed via [npm](https://npmjs.org/):
+axed-rpc.js runs on [node](http://nodejs.org/), and can be installed via [npm](https://npmjs.org/):
 
 ```bash
-npm install bitcoind-rpc-axe
+npm install axed-rpc
 ```
 
 ## RpcClient
@@ -27,8 +27,8 @@ Config parameters :
 
 Promise vs callback based
 
-  - `require('bitcoind-rpc-axe/promise')` to have promises returned
-  - `require('bitcoind-rpc-axe')` to have callback functions returned
+  - `require('axed-rpc/promise')` to have promises returned
+  - `require('axed-rpc')` to have callback functions returned
 
 ## Examples
 
@@ -45,7 +45,7 @@ var config = {
 
 Promise based:
 ```javascript
-var RpcClient = require('bitcoind-rpc-axe/promise');
+var RpcClient = require('axed-rpc/promise');
 var rpc = new RpcClient(config);
 
 rpc.getRawMemPool()
@@ -67,7 +67,7 @@ Callback based (legacy):
 ```javascript
 var run = function() {
   var bitcore = require('bitcore');
-  var RpcClient = require('bitcoind-rpc-axe');
+  var RpcClient = require('axed-rpc');
   var rpc = new RpcClient(config);
 
   var txids = [];
@@ -112,7 +112,7 @@ var run = function() {
 
 You can dynamically access to the help of each method by doing
 ```
-const RpcClient = require('bitcoind-rpc-axe');
+const RpcClient = require('axed-rpc');
 var client = new RPCclient({
     protocol:'http',
     user: 'axe',

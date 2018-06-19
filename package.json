@@ -34,7 +34,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/axerunners/bitcoind-rpc-axe"
+    "url": "https://github.com/axerunners/axed-rpc"
   },
   "license": "MIT",
   "main": "lib/index.js",
@@ -54,7 +54,7 @@
     "sinon": "^1.12.2"
   },
   "bugs": {
-    "url": "https://github.com/axerunners/bitcoind-rpc-axe/issues"
+    "url": "https://github.com/axerunners/axed-rpc/issues"
   },
-  "homepage": "https://github.com/axerunners/bitcoind-rpc-axe"
+  "homepage": "https://github.com/axerunners/axed-rpc"
 }
