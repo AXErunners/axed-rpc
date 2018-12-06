@@ -1,21 +1,21 @@
-axed-rpc.js
-===============
+# axed-rpc
 
-[![NPM Package](https://img.shields.io/npm/v/@axerunners/axed-rpc.svg)](https://www.npmjs.org/package/axed-rpc)
-[![Build Status](https://travis-ci.com/AXErunners/axed-rpc.svg?branch=master)](https://travis-ci.com/AXErunners/axed-rpc)
-[![Coverage Status](https://img.shields.io/coveralls/AXErunners/axed-rpc.svg)](https://coveralls.io/r/AXErunners/axed-rpc?branch=master)
+[![Build Status](https://img.shields.io/travis/axerunners/axed-rpc.svg?branch=master)](https://travis-ci.org/axerunners/axed-rpc)
+[![NPM Package](https://img.shields.io/npm/v/@axerunners/axed-rpc.svg)](https://www.npmjs.org/package/@axerunners/axed-rpc)
 
-A client library to connect to AXE Core RPC in JavaScript.
+> Axe Client Library to connect to Axe Core (axed) via RPC
 
-## Get Started
+## Install
 
-axed-rpc.js runs on [node](http://nodejs.org/), and can be installed via [npm](https://npmjs.org/):
+axed-rpc runs on [node](http://nodejs.org/), and can be installed via [npm](https://npmjs.org/):
 
 ```bash
-npm install axed-rpc
+npm install @axerunners/axed-rpc
 ```
 
-## RpcClient
+## Usage
+
+### RpcClient
 
 Config parameters :
 
@@ -27,25 +27,27 @@ Config parameters :
 
 Promise vs callback based
 
-  - `require('axed-rpc/promise')` to have promises returned
-  - `require('axed-rpc')` to have callback functions returned
+  - `require('@axerunners/axed-rpc/promise')` to have promises returned
+  - `require('@axerunners/axed-rpc')` to have callback functions returned
 
-## Examples
+### Examples
 
 Config:
+
 ```javascript
 var config = {
     protocol: 'http',
     user: 'axe',
     pass: 'local321',
     host: '127.0.0.1',
-    port: 9337
+    port: 19337
 };
 ```
 
 Promise based:
+
 ```javascript
-var RpcClient = require('axed-rpc/promise');
+var RpcClient = require('@axerunners/axed-rpc/promise');
 var rpc = new RpcClient(config);
 
 rpc.getRawMemPool()
@@ -60,14 +62,14 @@ rpc.getRawMemPool()
     .catch(err => {
         console.log(err)
     })
-
 ```
 
 Callback based (legacy):
+
 ```javascript
 var run = function() {
-  var bitcore = require('bitcore');
-  var RpcClient = require('axed-rpc');
+  var bitcore = require('@axerunners/axecore-lib');
+  var RpcClient = require('@axerunners/axed-rpc');
   var rpc = new RpcClient(config);
 
   var txids = [];
@@ -108,27 +110,35 @@ var run = function() {
 };
 ```
 
-## Help
+### Help
 
 You can dynamically access to the help of each method by doing
+
 ```
-const RpcClient = require('axed-rpc');
+const RpcClient = require('@axerunners/axed-rpc');
 var client = new RPCclient({
     protocol:'http',
     user: 'axe',
     pass: 'local321',
     host: '127.0.0.1',
-    port: 9337
+    port: 19337
 });
 
 var cb = function (err, data) {
     console.log(data)
 };
-client.help(cb); //Get full help
-client.help('getinfo',cb); //Get help of specific method
+
+// Get full help
+client.help(cb);
+
+// Get help of specific method
+client.help('getinfo',cb);
 ```
+
+## Contributing
+
+Feel free to dive in! [Open an issue](https://github.com/axerunners/axe-std-template/issues/new) or submit PRs.
+
 ## License
 
-**Code released under [the MIT license](https://github.com/bitpay/bitcore/blob/master/LICENSE).**
-
-Copyright 2013-2014 BitPay, Inc.
+[MIT](LICENSE) &copy; Axe Core Group, Inc.

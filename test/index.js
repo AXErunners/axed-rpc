@@ -105,7 +105,7 @@ describe('RpcClient', function() {
       disableAgent: true
     });
 
-    var requestStub = sinon.stub(client.protocol, 'request', function(options, callback){
+    var requestStub = sinon.stub(client.protocol, 'request').callsFake(function(options, callback){
       var res = new FakeResponse();
       var req =  new FakeRequest();
       setImmediate(function(){
@@ -136,7 +136,7 @@ describe('RpcClient', function() {
       disableAgent: false
     });
 
-    var requestStub = sinon.stub(client.protocol, 'request', function(options, callback){
+    var requestStub = sinon.stub(client.protocol, 'request').callsFake(function(options, callback){
       var res = new FakeResponse();
       var req = new FakeRequest();
       setImmediate(function(){
@@ -172,7 +172,7 @@ describe('RpcClient', function() {
       disableAgent: false
     });
 
-    var requestStub = sinon.stub(client.protocol, 'request', function(options, callback){
+    var requestStub = sinon.stub(client.protocol, 'request').callsFake(function(options, callback){
       var res = new FakeResponse();
       var req = new FakeRequest();
       setImmediate(function(){
@@ -209,7 +209,7 @@ describe('RpcClient', function() {
       disableAgent: false
     });
 
-    var requestStub = sinon.stub(client.protocol, 'request', function(options, callback){
+    var requestStub = sinon.stub(client.protocol, 'request').callsFake(function(options, callback){
       var res = new FakeResponse();
       setImmediate(function(){
         res.emit('data', '[{}, {}, {}]');
@@ -248,7 +248,7 @@ describe('RpcClient', function() {
       disableAgent: true
     });
 
-    var requestStub = sinon.stub(client.protocol, 'request', function(options, callback){
+    var requestStub = sinon.stub(client.protocol, 'request').callsFake(function(options, callback){
       var res = new FakeResponse();
       res.statusCode = 401;
       setImmediate(function(){
@@ -261,7 +261,7 @@ describe('RpcClient', function() {
     client.getBalance('n28S35tqEMbt6vNad7A5K3mZ7vdn8dZ86X', 6, function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('AXE JSON-RPC: Connection Rejected: 401 Unnauthorized');
+      error.message.should.equal('Axe JSON-RPC: Connection Rejected: 401 Unnauthorized');
       done();
     });
 
@@ -278,7 +278,7 @@ describe('RpcClient', function() {
       disableAgent: true
     });
 
-    var requestStub = sinon.stub(client.protocol, 'request', function(options, callback){
+    var requestStub = sinon.stub(client.protocol, 'request').callsFake(function(options, callback){
       var res = new FakeResponse();
       res.statusCode = 403;
       setImmediate(function(){
@@ -291,7 +291,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('AXE JSON-RPC: Connection Rejected: 403 Forbidden');
+      error.message.should.equal('Axe JSON-RPC: Connection Rejected: 403 Forbidden');
       done();
     });
 
@@ -308,7 +308,7 @@ describe('RpcClient', function() {
       disableAgent: true
     });
 
-    var requestStub = sinon.stub(client.protocol, 'request', function(options, callback){
+    var requestStub = sinon.stub(client.protocol, 'request').callsFake(function(options, callback){
       var res = new FakeResponse();
       res.statusCode = 500;
       setImmediate(function(){
@@ -322,7 +322,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('AXE JSON-RPC: Work queue depth exceeded');
+      error.message.should.equal('Axe JSON-RPC: Work queue depth exceeded');
       done();
     });
 
@@ -339,7 +339,7 @@ describe('RpcClient', function() {
       disableAgent: true
     });
 
-    var requestStub = sinon.stub(client.protocol, 'request', function(options, callback){
+    var requestStub = sinon.stub(client.protocol, 'request').callsFake(function(options, callback){
       var req = new FakeRequest();
       setImmediate(function(){
         req.emit('error', new Error('write EPIPE'));
@@ -356,7 +356,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('AXE JSON-RPC: Request Error: write EPIPE');
+      error.message.should.equal('Axe JSON-RPC: Request Error: write EPIPE');
       done();
     });
 
@@ -373,7 +373,7 @@ describe('RpcClient', function() {
       disableAgent: true
     });
 
-    var requestStub = sinon.stub(client.protocol, 'request', function(options, callback){
+    var requestStub = sinon.stub(client.protocol, 'request').callsFake(function(options, callback){
       var res = new FakeResponse();
       setImmediate(function(){
         res.emit('data', '{}');
@@ -406,7 +406,7 @@ describe('RpcClient', function() {
       disableAgent: true
     });
 
-    var requestStub = sinon.stub(client.protocol, 'request', function(options, callback){
+    var requestStub = sinon.stub(client.protocol, 'request').callsFake(function(options, callback){
       var res = new FakeResponse();
       var req = new FakeRequest();
       setImmediate(function(){
@@ -419,7 +419,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('AXE JSON-RPC: Request Error: connect ECONNREFUSED');
+      error.message.should.equal('Axe JSON-RPC: Request Error: connect ECONNREFUSED');
       done();
     });
 
@@ -436,7 +436,7 @@ describe('RpcClient', function() {
       disableAgent: true
     });
 
-    var requestStub = sinon.stub(client.protocol, 'request', function(options, callback){
+    var requestStub = sinon.stub(client.protocol, 'request').callsFake(function(options, callback){
       var res = new FakeResponse();
       setImmediate(function(){
         res.emit('data', 'not a json string');
@@ -450,7 +450,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('AXE JSON-RPC: Error Parsing JSON: Unexpected token o in JSON at position 1');
+      error.message.should.equal('Axe JSON-RPC: Error Parsing JSON: Unexpected token o in JSON at position 1');
       done();
     });
 
@@ -467,7 +467,7 @@ describe('RpcClient', function() {
       disableAgent: true
     });
 
-    var requestStub = sinon.stub(client.protocol, 'request', function(options, callback){
+    var requestStub = sinon.stub(client.protocol, 'request').callsFake(function(options, callback){
       var res = new FakeResponse();
       setImmediate(function(){
         res.emit('data', '');
@@ -481,7 +481,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('AXE JSON-RPC: Error Parsing JSON: Unexpected end of JSON input');
+      error.message.should.equal('Axe JSON-RPC: Error Parsing JSON: Unexpected end of JSON input');
       done();
     });
 
@@ -504,7 +504,7 @@ describe('RpcClient', function() {
 
     var calledPort = false;
 
-    var requestStub = sinon.stub(client.protocol, 'request', function(options, callback){
+    var requestStub = sinon.stub(client.protocol, 'request').callsFake(function(options, callback){
       calledPort = options.port;
       var res = new FakeResponse();
       setImmediate(function(){

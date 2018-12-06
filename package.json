@@ -1,7 +1,7 @@
 {
   "name": "@axerunners/axed-rpc",
-  "description": "AXE Client Library to connect to AXE Core via RPC",
-  "version": "1.0.1",
+  "description": "AXE Client Library to connect to AXE Core (axed) via RPC",
+  "version": "1.2.2",
   "author": {
     "name": "AXErunners",
     "email": "info@axerunners.com"
@@ -47,11 +47,13 @@
     "bluebird": "^3.5.1"
   },
   "devDependencies": {
-    "chai": "^1.10.0",
-    "coveralls": "^2.13.1",
+    "chai": "^4.2.0",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "istanbul": "^0.4.5",
-    "mocha": "^2.1.0",
-    "sinon": "^1.12.2"
+    "mocha": "^5.2.0",
+    "sinon": "^7.1.1"
   },
   "bugs": {
     "url": "https://github.com/axerunners/axed-rpc/issues"
