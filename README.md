@@ -137,8 +137,9 @@ client.help('getinfo',cb);
 
 ## Contributing
 
-Feel free to dive in! [Open an issue](https://github.com/axerunners/axe-std-template/issues/new) or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/axerunners/axed-rpc/issues/new) or submit PRs.
 
 ## License
 
-[MIT](LICENSE) &copy; Axe Core Group, Inc.
+[MIT](LICENSE) &copy; Dash Core Group, Inc.
+[MIT](LICENSE) &copy; AXErunners.
