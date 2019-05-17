@@ -1,6 +1,6 @@
 # axed-rpc
 
-[![Build Status](https://img.shields.io/travis/axerunners/axed-rpc.svg?branch=master)](https://travis-ci.org/axerunners/axed-rpc)
+[![Build Status](https://img.shields.io/travis/axerunners/axed-rpc.svg?branch=master)](https://travis-ci.com/axerunners/axed-rpc)
 [![NPM Package](https://img.shields.io/npm/v/@axerunners/axed-rpc.svg)](https://www.npmjs.org/package/@axerunners/axed-rpc)
 
 > Axe Client Library to connect to Axe Core (axed) via RPC
